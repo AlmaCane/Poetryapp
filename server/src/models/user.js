@@ -1,7 +1,7 @@
 const { DataTypes, UUIDV4 } = require("sequelize");
 
 module.exports = (sequelize) => {
-  const user = sequelize.define("User", {
+  const user = sequelize.define("user", {
     id: {
       type: DataTypes.UUID,
       allowNull: false,
@@ -13,6 +13,10 @@ module.exports = (sequelize) => {
       allowNull: false,
       primaryKey: true,
       unique: true,
+    },
+    gender: {
+      type: DataTypes.ENUM("Man", "Woman", "Non-binary", "Other"),
+      allowNull: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -83,5 +87,5 @@ module.exports = (sequelize) => {
     },
   });
 
-  return User;
+  return user;
 };
