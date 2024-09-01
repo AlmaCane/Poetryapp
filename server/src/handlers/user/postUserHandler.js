@@ -56,7 +56,7 @@ const postUserHandler = async (req, res) => {
     return res.send("User already exists");
   } catch (error) {
     console.log("Error creating user", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(400).json({ message: `error: ${error.message}` });
   }
 };
 
