@@ -2,7 +2,7 @@ const express = require("express");
 const server = express();
 const morgan = require("morgan");
 const cors = require("cors");
-const router = require("./routes/routeIndex.js");
+const router = require("./models/routes/routeIndex.js");
 const helmet = require("helmet");
 
 //? Middlewares
